@@ -21,10 +21,8 @@ const PostDetail = () => {
         setLoading(true)
         try {
           const response=await axios.get(`${import.meta.env.VITE_BACKEND_URL}/posts/${id}`)
-          setPost(response.data)
-        
-          
-        } catch (error) {
+          setPost(response.data)   
+        }catch(error) {
          setError(error)
         }
         setLoading(false)
@@ -57,9 +55,7 @@ const PostDetail = () => {
           <div className="post-detail__thumbnail">
             <img src={`${import.meta.env.VITE_ASSESTS_URL}/uploads/${post.thumbnail}`} alt="" />
           </div>
-          <p dangerouslySetInnerHTML={{__html: post.description}}>
-       
-          </p>
+          <p dangerouslySetInnerHTML={{__html: post.description}}></p>
         </div>
       )}
     </section>
