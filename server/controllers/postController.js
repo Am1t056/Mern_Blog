@@ -11,7 +11,8 @@ const HttpError = require("../models/errorModel")
 //PROTECTED
 const createPost=async(req,res,next)=>{
 try {
-    const {title,description,category}=req.body
+    const {title,description,category}=req.body;
+    
     if(!title || !description || !category){
         return next(new HttpError("Please fill in all fields",422))
     }
